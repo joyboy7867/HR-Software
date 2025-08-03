@@ -1,0 +1,42 @@
+here's your master list of models you can use with SentenceTransformer. These are models hosted on Hugging Face and directly compatible with the sentence-transformers library.
+
+🔥 1. General-Purpose (Good Accuracy + Speed)
+Model	Size	Comments
+all-MiniLM-L6-v2	~80MB	Default, fast, good for small apps
+all-mpnet-base-v2	~420MB	Better accuracy, ideal general-purpose model
+paraphrase-MiniLM-L6-v2	~80MB	Good for paraphrase detection, general use
+paraphrase-mpnet-base-v2	~420MB	Same as above but deeper context
+
+🧠 2. Semantic Search / Matching Models (High Performance)
+Model	Size	Description
+intfloat/e5-base-v2	~440MB	🔥 Best for query-passage like JD/resume matching
+intfloat/e5-small-v2	~120MB	Smaller, faster version
+BAAI/bge-base-en-v1.5	~400MB	Also top-tier for semantic search (requires prompt prefixing)
+BAAI/bge-small-en-v1.5	~120MB	Lighter, still powerful
+multi-qa-MiniLM-L6-cos-v1	~100MB	Good for multi-question-answer tasks (retrieval etc.)
+
+✅ Use E5 or BGE for smart search bar + JD-to-resume ranking.
+
+🌐 3. Multilingual Models
+Model	Size	Languages	Notes
+distiluse-base-multilingual-cased-v2	~240MB	🌍 50+ languages	Balanced multilingual performance
+paraphrase-multilingual-MiniLM-L12-v2	~200MB	🌍 Global	Great for cross-language matching
+sentence-transformers/paraphrase-xlm-r-multilingual-v1	~550MB	🌍 100+	Heavier but accurate
+
+🧩 4. Specialty / Task-Focused Models
+Model	Task	Comments
+sentence-transformers/msmarco-distilbert-dot-v5	Dense Retrieval	Great for QA-type ranking
+sentence-transformers/all-distilroberta-v1	Semantic Search	Good balance of speed & quality
+sentence-transformers/stsb-roberta-large	STS Benchmark	Great for sentence similarity tasks
+nreimers/MiniLMv2-L12-H384-distilled-from-RoBERTa-Large	Fast & light	Custom distilled model
+
+🛠 How to Use Any of These
+
+from sentence_transformers import SentenceTransformer
+model = SentenceTransformer('MODEL_NAME_HERE')
+🔥 My Top Picks for You (Resume Matcher & Smart Search)
+Use Case	Best Model
+Resume ↔ JD Matching	intfloat/e5-base-v2 ✅
+Smart Search Bar (natural query → resume match)	BAAI/bge-base-en-v1.5
+Lightweight + good	all-mpnet-base-v2
+Small & fast for demos	all-MiniLM-L6-v2

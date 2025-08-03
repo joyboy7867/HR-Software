@@ -1,0 +1,23 @@
+Flask==2.3.3
+Flask-Cors==4.0.0
+werkzeug==2.3.7
+
+pdfplumber==0.10.3
+python-docx==1.1.0
+
+sentence-transformers==2.6.1
+torch>=1.13.0
+transformers>=4.25.1
+scikit-learn==1.4.0
+
+pandas==2.2.1
+
+# For zip and temporary file extraction
+zipfile36; python_version < '3.7'  # Optional depending on Python version
+
+# Optional for OCR fallback (not used now)
+# pytesseract==0.3.10
+# pdf2image==1.16.3
+
+# If you're using MongoDB later
+# pymongo==4.6.0
